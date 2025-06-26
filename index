@@ -3,825 +3,831 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>A Sunil Singha - Digital Marketing Portfolio</title>
+    <title>Sunil Singha - Digital Marketing Specialist</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <style>
-        :root {
-            --primary: #2d3748;
-            --secondary: #4a5568;
-            --accent: #3182ce;
-            --light: #f7fafc;
-            --light-gray: #edf2f7;
-            --dark-gray: #1a202c;
-            --border: #e2e8f0;
-        }
-        
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
         }
-        
+
         body {
-            color: var(--primary);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             line-height: 1.6;
-            background-color: var(--light);
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
         }
-        
+
         .container {
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 20px;
         }
-        
-        /* Navigation */
-        nav {
-            background-color: white;
-            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+
+        /* Header */
+        header {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
             position: fixed;
             width: 100%;
             top: 0;
-            z-index: 100;
+            z-index: 1000;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
         }
-        
-        .nav-container {
+
+        nav {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 1rem 2rem;
-            max-width: 1200px;
-            margin: 0 auto;
+            padding: 1rem 0;
         }
-        
-        .nav-logo {
-            font-weight: 700;
+
+        .logo {
             font-size: 1.5rem;
-            color: var(--primary);
+            font-weight: bold;
+            color: #667eea;
         }
-        
-        .nav-menu {
+
+        .nav-links {
             display: flex;
             list-style: none;
+            gap: 2rem;
         }
-        
-        .nav-item {
-            margin-left: 2rem;
-        }
-        
-        .nav-link {
-            color: var(--primary);
+
+        .nav-links a {
             text-decoration: none;
+            color: #333;
             font-weight: 500;
-            transition: color 0.3s;
+            transition: color 0.3s ease;
         }
-        
-        .nav-link:hover {
-            color: var(--accent);
+
+        .nav-links a:hover {
+            color: #667eea;
         }
-        
+
         /* Hero Section */
         .hero {
             height: 100vh;
             display: flex;
             align-items: center;
-            background: linear-gradient(135deg, var(--light) 0%, var(--light-gray) 100%);
-            padding-top: 60px;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            position: relative;
+            overflow: hidden;
         }
-        
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0,0,0,0.3);
+        }
+
         .hero-content {
+            position: relative;
+            z-index: 2;
             max-width: 800px;
         }
-        
-        .hero-title {
-            font-size: 3rem;
-            font-weight: 800;
+
+        .hero h1 {
+            font-size: 3.5rem;
             margin-bottom: 1rem;
-            color: var(--dark-gray);
+            animation: fadeInUp 1s ease;
         }
-        
-        .hero-subtitle {
-            font-size: 1.5rem;
-            color: var(--secondary);
-            margin-bottom: 1.5rem;
-        }
-        
-        .hero-text {
-            font-size: 1.125rem;
+
+        .hero .tagline {
+            font-size: 1.3rem;
             margin-bottom: 2rem;
-            color: var(--secondary);
+            opacity: 0.9;
+            animation: fadeInUp 1s ease 0.3s both;
         }
-        
-        .hero-cta {
-            display: inline-block;
-            background-color: var(--accent);
-            color: white;
-            padding: 0.75rem 1.5rem;
-            border-radius: 4px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: background-color 0.3s;
-        }
-        
-        .hero-cta:hover {
-            background-color: #2c5282;
-        }
-        
-        .contact-details {
-            margin-top: 2rem;
+
+        .contact-info {
             display: flex;
-            flex-wrap: wrap;
-            gap: 1rem;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 2rem;
+            animation: fadeInUp 1s ease 0.6s both;
         }
-        
+
         .contact-item {
             display: flex;
             align-items: center;
-            margin-right: 1.5rem;
-            color: var(--secondary);
+            gap: 0.5rem;
+            color: white;
+            text-decoration: none;
         }
-        
-        .contact-item i {
-            margin-right: 0.5rem;
-            color: var(--accent);
+
+        .contact-item:hover {
+            color: #ffd700;
         }
-        
-        /* About Section */
-        section {
+
+        .cta-button {
+            background: linear-gradient(45deg, #ffd700, #ffed4e);
+            color: #333;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+            animation: fadeInUp 1s ease 0.9s both;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+        }
+
+        /* Section Styles */
+        .section {
             padding: 5rem 0;
+            background: white;
         }
-        
+
+        .section:nth-child(even) {
+            background: #f8f9fa;
+        }
+
         .section-title {
-            font-size: 2rem;
-            font-weight: 700;
-            margin-bottom: 2rem;
-            color: var(--dark-gray);
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: #333;
             position: relative;
-            padding-bottom: 0.5rem;
         }
-        
+
         .section-title::after {
             content: '';
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(45deg, #667eea, #764ba2);
             position: absolute;
-            left: 0;
-            bottom: 0;
-            width: 50px;
-            height: 3px;
-            background-color: var(--accent);
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
         }
-        
+
+        /* About Section */
         .about-content {
-            display: flex;
+            display: grid;
+            grid-template-columns: 1fr 2fr;
             gap: 3rem;
-        }
-        
-        .about-text {
-            flex: 1;
-        }
-        
-        .about-text p {
-            margin-bottom: 1rem;
-            font-size: 1.1rem;
-        }
-        
-        /* Skills Section */
-        .skills {
-            background-color: white;
-        }
-        
-        .skills-container {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 2rem;
-        }
-        
-        .skills-category {
-            flex: 1;
-            min-width: 300px;
-        }
-        
-        .skills-category h3 {
-            font-size: 1.25rem;
-            margin-bottom: 1rem;
-            color: var(--dark-gray);
-        }
-        
-        .skills-list {
-            list-style: none;
-        }
-        
-        .skills-item {
-            margin-bottom: 0.75rem;
-            display: flex;
             align-items: center;
         }
-        
-        .skills-item::before {
-            content: '•';
-            color: var(--accent);
+
+        .about-text {
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .stat-item {
+            text-align: center;
+            padding: 1.5rem;
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            color: white;
+            border-radius: 10px;
+        }
+
+        .stat-number {
+            font-size: 2rem;
             font-weight: bold;
-            display: inline-block;
-            width: 1em;
-            margin-right: 0.5rem;
+            display: block;
         }
-        
-        /* Experience Section */
-        .experience-item {
-            margin-bottom: 3rem;
-            padding-bottom: 2rem;
-            border-bottom: 1px solid var(--border);
+
+        /* Skills Section */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
         }
-        
-        .experience-item:last-child {
-            border-bottom: none;
-        }
-        
-        .experience-title {
-            font-size: 1.25rem;
-            font-weight: 700;
-            margin-bottom: 0.5rem;
-            color: var(--dark-gray);
-        }
-        
-        .experience-company {
-            font-size: 1.1rem;
-            color: var(--accent);
-            margin-bottom: 0.25rem;
-        }
-        
-        .experience-period {
-            font-size: 0.875rem;
-            color: var(--secondary);
-            margin-bottom: 1rem;
-        }
-        
-        .experience-description {
-            margin-bottom: 1rem;
-        }
-        
-        .experience-highlights {
-            margin-left: 1.5rem;
-        }
-        
-        .experience-highlights li {
-            margin-bottom: 0.5rem;
-        }
-        
-        /* Projects Section */
-        .projects {
-            background-color: white;
-        }
-        
-        .project-item {
-            margin-bottom: 3rem;
+
+        .skill-category {
+            background: white;
             padding: 2rem;
-            border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-            background-color: var(--light);
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
         }
-        
-        .project-header {
-            display: flex;
-            justify-content: space-between;
-            margin-bottom: 1.5rem;
-            flex-wrap: wrap;
+
+        .skill-category:hover {
+            transform: translateY(-5px);
         }
-        
-        .project-title {
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: var(--dark-gray);
-            margin-bottom: 0.5rem;
+
+        .skill-category h3 {
+            color: #667eea;
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
         }
-        
-        .project-client {
-            font-size: 1rem;
-            color: var(--secondary);
-        }
-        
-        .project-meta {
-            text-align: right;
-        }
-        
-        .project-duration {
-            font-size: 0.875rem;
-            color: var(--secondary);
-        }
-        
-        .project-role {
-            font-size: 0.875rem;
-            color: var(--accent);
-            font-weight: 500;
-        }
-        
-        .project-section {
-            margin-bottom: 1.5rem;
-        }
-        
-        .project-section h4 {
-            font-size: 1.1rem;
-            margin-bottom: 0.75rem;
-            color: var(--dark-gray);
-        }
-        
-        .project-tools {
+
+        .skill-tags {
             display: flex;
             flex-wrap: wrap;
             gap: 0.5rem;
-            margin-bottom: 1.5rem;
         }
-        
-        .project-tool {
-            background-color: var(--light-gray);
-            padding: 0.25rem 0.75rem;
-            border-radius: 16px;
-            font-size: 0.875rem;
-            color: var(--secondary);
+
+        .skill-tag {
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            color: white;
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
         }
-        
-        .project-metrics {
-            margin-top: 1.5rem;
-        }
-        
-        .metrics-table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-bottom: 1.5rem;
-        }
-        
-        .metrics-table th {
-            background-color: var(--light-gray);
-            text-align: left;
-            padding: 0.75rem;
-            font-weight: 600;
-        }
-        
-        .metrics-table td {
-            padding: 0.75rem;
-            border-bottom: 1px solid var(--border);
-        }
-        
-        .metrics-table tr:last-child td {
-            border-bottom: none;
-        }
-        
-        .project-highlights {
-            margin-top: 1.5rem;
-        }
-        
-        .project-highlights h4 {
-            margin-bottom: 1rem;
-        }
-        
-        .highlights-list {
-            list-style: none;
-        }
-        
-        .highlights-list li {
-            margin-bottom: 0.5rem;
-            padding-left: 1.5rem;
+
+        /* Experience Section */
+        .experience-timeline {
             position: relative;
+            padding-left: 2rem;
         }
-        
-        .highlights-list li::before {
-            content: '✓';
-            color: var(--accent);
+
+        .experience-timeline::before {
+            content: '';
             position: absolute;
             left: 0;
-            font-weight: bold;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: linear-gradient(45deg, #667eea, #764ba2);
         }
-        
-        /* Footer */
-        footer {
-            background-color: var(--dark-gray);
-            color: white;
-            padding: 3rem 0;
+
+        .experience-item {
+            position: relative;
+            margin-bottom: 3rem;
+            padding-left: 2rem;
         }
-        
-        .footer-content {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
+
+        .experience-item::before {
+            content: '';
+            position: absolute;
+            left: -2rem;
+            top: 0;
+            width: 12px;
+            height: 12px;
+            background: #667eea;
+            border-radius: 50%;
+            transform: translateX(-5px);
         }
-        
-        .footer-text {
-            max-width: 400px;
-        }
-        
-        .footer-text h3 {
-            font-size: 1.5rem;
+
+        .experience-header {
             margin-bottom: 1rem;
         }
-        
-        .footer-contact {
+
+        .job-title {
+            font-size: 1.3rem;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .company {
+            color: #667eea;
+            font-weight: 600;
+        }
+
+        .duration {
+            color: #666;
+            font-style: italic;
+        }
+
+        .achievements {
+            list-style: none;
             margin-top: 1rem;
         }
-        
-        .footer-contact a {
+
+        .achievements li {
+            margin-bottom: 0.5rem;
+            padding-left: 1rem;
+            position: relative;
+        }
+
+        .achievements li::before {
+            content: '▶';
+            position: absolute;
+            left: 0;
+            color: #667eea;
+        }
+
+        /* Case Studies Section */
+        .case-studies-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        .case-study {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .case-study:hover {
+            transform: translateY(-10px);
+        }
+
+        .case-study-header {
+            background: linear-gradient(45deg, #667eea, #764ba2);
             color: white;
-            text-decoration: none;
-            margin-right: 1rem;
-            transition: color 0.3s;
+            padding: 1.5rem;
         }
-        
-        .footer-contact a:hover {
-            color: var(--accent);
+
+        .case-study-title {
+            font-size: 1.3rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
         }
-        
-        .footer-cta {
-            text-align: right;
+
+        .case-study-subtitle {
+            opacity: 0.9;
         }
-        
-        .footer-cta .hero-cta {
+
+        .case-study-content {
+            padding: 1.5rem;
+        }
+
+        .metrics-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
             margin-top: 1rem;
         }
-        
-        /* Media Queries */
+
+        .metric {
+            text-align: center;
+            padding: 1rem;
+            background: #f8f9fa;
+            border-radius: 8px;
+        }
+
+        .metric-value {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #667eea;
+            display: block;
+        }
+
+        .metric-label {
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsive Design */
         @media (max-width: 768px) {
-            .nav-menu {
+            .nav-links {
                 display: none;
             }
-            
-            .hero-title {
+
+            .hero h1 {
                 font-size: 2.5rem;
             }
-            
-            .hero-subtitle {
-                font-size: 1.25rem;
+
+            .contact-info {
+                flex-direction: column;
+                gap: 1rem;
             }
-            
+
             .about-content {
-                flex-direction: column;
+                grid-template-columns: 1fr;
+                text-align: center;
             }
-            
-            .footer-content {
-                flex-direction: column;
-                align-items: flex-start;
+
+            .stats {
+                grid-template-columns: 1fr;
             }
-            
-            .footer-cta {
-                text-align: left;
-                margin-top: 2rem;
+
+            .experience-timeline {
+                padding-left: 1rem;
+            }
+
+            .experience-item {
+                padding-left: 1.5rem;
             }
         }
+
+        /* Floating elements */
+        .floating-shapes {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        .shape {
+            position: absolute;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .shape:nth-child(1) {
+            width: 80px;
+            height: 80px;
+            top: 20%;
+            left: 10%;
+            animation-delay: 0s;
+        }
+
+        .shape:nth-child(2) {
+            width: 120px;
+            height: 120px;
+            top: 60%;
+            right: 15%;
+            animation-delay: 2s;
+        }
+
+        .shape:nth-child(3) {
+            width: 60px;
+            height: 60px;
+            bottom: 20%;
+            left: 20%;
+            animation-delay: 4s;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
     </style>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
-    <!-- Navigation -->
-    <nav>
-        <div class="nav-container">
-            <a href="#" class="nav-logo">A. Sunil Singha</a>
-            <ul class="nav-menu">
-                <li class="nav-item"><a href="#about" class="nav-link">About</a></li>
-                <li class="nav-item"><a href="#skills" class="nav-link">Skills</a></li>
-                <li class="nav-item"><a href="#experience" class="nav-link">Experience</a></li>
-                <li class="nav-item"><a href="#projects" class="nav-link">Projects</a></li>
-                <li class="nav-item"><a href="#contact" class="nav-link">Contact</a></li>
+    <header>
+        <nav class="container">
+            <div class="logo">Sunil Singha</div>
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#case-studies">Case Studies</a></li>
+                <li><a href="#contact">Contact</a></li>
             </ul>
-        </div>
-    </nav>
+        </nav>
+    </header>
 
-    <!-- Hero Section -->
     <section class="hero">
-        <div class="container">
-            <div class="hero-content">
-                <h1 class="hero-title">A Sunil Singha</h1>
-                <h2 class="hero-subtitle">Senior Digital Marketing Specialist</h2>
-                <p class="hero-text">Driving Growth with ROI-Focused Digital Strategies</p>
-                <a href="#contact" class="hero-cta">Get In Touch</a>
-                <div class="contact-details">
-                    <div class="contact-item">
-                        <i class="fas fa-envelope"></i>
-                        <span>Sunilsingha900@gmail.com</span>
-                    </div>
-                    <div class="contact-item">
-                        <i class="fas fa-phone"></i>
-                        <span>7086857126</span>
-                    </div>
-                    <div class="contact-item">
-                        <i class="fab fa-linkedin"></i>
-                        <span>www.linkedin.com/in/asunilsingha900</span>
-                    </div>
-                </div>
+        <div class="floating-shapes">
+            <div class="shape"></div>
+            <div class="shape"></div>
+            <div class="shape"></div>
+        </div>
+        <div class="hero-content">
+            <h1>Sunil Singha</h1>
+            <p class="tagline">Senior Digital Marketing Specialist<br>Driving Growth with ROI-Focused Digital Strategies</p>
+            <div class="contact-info">
+                <a href="mailto:Sunilsingha900@gmail.com" class="contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <span>Sunilsingha900@gmail.com</span>
+                </a>
+                <a href="tel:7086857126" class="contact-item">
+                    <i class="fas fa-phone"></i>
+                    <span>7086857126</span>
+                </a>
+                <a href="https://www.linkedin.com/in/asunilsingha900" class="contact-item" target="_blank">
+                    <i class="fab fa-linkedin"></i>
+                    <span>LinkedIn</span>
+                </a>
             </div>
+            <button class="cta-button" onclick="document.getElementById('case-studies').scrollIntoView({behavior: 'smooth'})">
+                View My Work
+            </button>
         </div>
     </section>
 
-    <!-- About Section -->
-    <section id="about">
+    <section id="about" class="section">
         <div class="container">
             <h2 class="section-title">About Me</h2>
             <div class="about-content">
+                <div class="stats">
+                    <div class="stat-item">
+                        <span class="stat-number">4+</span>
+                        <span>Years Experience</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">₹5L+</span>
+                        <span>Revenue Generated</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">448</span>
+                        <span>Meta Ad Conversions</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">11.5%</span>
+                        <span>Average CTR</span>
+                    </div>
+                </div>
                 <div class="about-text">
                     <p>I'm a data-driven Senior Digital Marketing Specialist with over 4 years of experience across digital strategy, performance marketing, and campaign optimization. With a strong foundation in Meta ads and cross-channel expertise spanning SEO, email marketing, WhatsApp automation, influencer and affiliate marketing, I've helped brands scale revenue and engagement efficiently.</p>
+                    
                     <p>My experience spans SaaS, e-commerce, ed-tech, and automobile industries — where I've successfully launched loyalty programs, reduced service drop-offs, and managed campaigns that drive real results. From hands-on creative production to full-funnel performance tracking, I blend strategic thinking with sharp execution.</p>
+                    
                     <p>I believe marketing is part art, part science — and I'm passionate about building brands that connect, convert, and grow.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Skills Section -->
-    <section id="skills" class="skills">
+    <section id="skills" class="section">
         <div class="container">
-            <h2 class="section-title">Skills & Tools</h2>
-            <div class="skills-container">
-                <div class="skills-category">
-                    <h3>Marketing Skills</h3>
-                    <ul class="skills-list">
-                        <li class="skills-item">Meta Ads (Facebook & Instagram)</li>
-                        <li class="skills-item">SEO (On-page & Off-page)</li>
-                        <li class="skills-item">Email Marketing</li>
-                        <li class="skills-item">WhatsApp Marketing</li>
-                        <li class="skills-item">Social Media Management</li>
-                        <li class="skills-item">Website Development Strategy</li>
-                        <li class="skills-item">Influencer Marketing</li>
-                        <li class="skills-item">Affiliate Marketing</li>
-                        <li class="skills-item">Google Ads</li>
-                    </ul>
+            <h2 class="section-title">Skills & Expertise</h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3><i class="fas fa-bullhorn"></i> Digital Marketing</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Meta Ads</span>
+                        <span class="skill-tag">Google Ads</span>
+                        <span class="skill-tag">SEO</span>
+                        <span class="skill-tag">Email Marketing</span>
+                        <span class="skill-tag">WhatsApp Marketing</span>
+                        <span class="skill-tag">Social Media</span>
+                    </div>
                 </div>
-                <div class="skills-category">
-                    <h3>Tools & Platforms</h3>
-                    <ul class="skills-list">
-                        <li class="skills-item">Meta Ads Manager</li>
-                        <li class="skills-item">Google Ads</li>
-                        <li class="skills-item">Google Analytics</li>
-                        <li class="skills-item">SEMrush</li>
-                        <li class="skills-item">Ahrefs</li>
-                        <li class="skills-item">Mailchimp</li>
-                        <li class="skills-item">Klaviyo</li>
-                        <li class="skills-item">WhatsApp Business API (doubletick.io)</li>
-                        <li class="skills-item">Canva</li>
-                        <li class="skills-item">WordPress</li>
-                        <li class="skills-item">Magento</li>
-                    </ul>
+                <div class="skill-category">
+                    <h3><i class="fas fa-chart-line"></i> Growth Marketing</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Influencer Marketing</span>
+                        <span class="skill-tag">Affiliate Marketing</span>
+                        <span class="skill-tag">Performance Marketing</span>
+                        <span class="skill-tag">Conversion Optimization</span>
+                        <span class="skill-tag">A/B Testing</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3><i class="fas fa-tools"></i> Tools & Platforms</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Meta Ads Manager</span>
+                        <span class="skill-tag">Google Analytics</span>
+                        <span class="skill-tag">SEMrush</span>
+                        <span class="skill-tag">Ahrefs</span>
+                        <span class="skill-tag">Mailchimp</span>
+                        <span class="skill-tag">Klaviyo</span>
+                        <span class="skill-tag">DoubleTick</span>
+                        <span class="skill-tag">Canva</span>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Experience Section -->
-    <section id="experience">
+    <section id="experience" class="section">
         <div class="container">
             <h2 class="section-title">Professional Experience</h2>
-            
-            <div class="experience-item">
-                <h3 class="experience-title">Senior Digital Marketing Specialist</h3>
-                <div class="experience-company">TalkEng</div>
-                <div class="experience-period">Sep 2024 – Present | Agartala, Tripura</div>
-                <div class="experience-description">
-                    <ul class="experience-highlights">
-                        <li>Lead digital strategy and execution across paid ads (Meta, Google) with a focus on performance marketing and conversion rate optimization.</li>
-                        <li>Drive targeted user acquisition and funnel optimization for TalkEng's online communication skills programs.</li>
-                        <li>Boosted campaign effectiveness through A/B testing and retargeting strategies, enhancing CTR and reducing cost per conversion.</li>
-                        <li>Collaborated with cross-functional teams to enhance landing page performance and overall brand visibility.</li>
+            <div class="experience-timeline">
+                <div class="experience-item">
+                    <div class="experience-header">
+                        <div class="job-title">Senior Digital Marketing Specialist</div>
+                        <div class="company">TalkEng</div>
+                        <div class="duration">Sep 2024 - Present | Agartala, Tripura</div>
+                    </div>
+                    <ul class="achievements">
+                        <li>Lead digital strategy and execution across paid ads (Meta, Google) with focus on performance marketing</li>
+                        <li>Drive targeted user acquisition and funnel optimization for online communication skills programs</li>
+                        <li>Delivered 448 conversions via Meta Ads with 11.5% CTR and ₹9.22 CPC</li>
+                        <li>Enhanced campaign effectiveness through A/B testing and retargeting strategies</li>
                     </ul>
                 </div>
-                <div class="experience-description">
-                    <strong>Campaign Highlights:</strong>
-                    <ul class="experience-highlights">
-                        <li>Delivered 448 conversions via Meta Ads</li>
-                        <li>Achieved 11.5% CTR, ₹9.22 CPC, and ₹66.68 CPM</li>
+
+                <div class="experience-item">
+                    <div class="experience-header">
+                        <div class="job-title">Domain & Procurement Analyst</div>
+                        <div class="company">ClickForge</div>
+                        <div class="duration">Apr 2023 - July 2024 | Jaipur, Rajasthan</div>
+                    </div>
+                    <ul class="achievements">
+                        <li>Spearheaded new product launches in e-commerce categories resulting in sell-outs within first week</li>
+                        <li>Optimized listings and resolved procurement inefficiencies, reducing risk and improving inventory turnover</li>
+                        <li>Successfully launched rewards and loyalty program introducing Mytee Bucks</li>
+                        <li>Created dashboards and KPI reports to support strategic decision-making</li>
                     </ul>
                 </div>
-            </div>
-            
-            <div class="experience-item">
-                <h3 class="experience-title">Domain & Procurement Analyst</h3>
-                <div class="experience-company">ClickForge</div>
-                <div class="experience-period">Apr 2023 – July 2024 | Jaipur, Rajasthan</div>
-                <div class="experience-description">
-                    <ul class="experience-highlights">
-                        <li>Spearheaded new product launches in e-commerce categories: Lifting & Rigging, Truck Parts, and Farming Supplies—resulting in sell-outs within the first week.</li>
-                        <li>Optimized listings and resolved procurement inefficiencies, reducing risk and improving inventory turnover.</li>
-                        <li>Collaborated with marketing and content teams to enhance SEO and product discoverability.</li>
-                        <li>Created dashboards and KPI reports to support strategic decision-making.</li>
-                        <li>Successfully conceptualized and launched a rewards and loyalty program—introducing Mytee Bucks.</li>
+
+                <div class="experience-item">
+                    <div class="experience-header">
+                        <div class="job-title">Business Development Analyst</div>
+                        <div class="company">MyTelly.in</div>
+                        <div class="duration">Jan 2022 - Jan 2023 | Jaipur, Rajasthan</div>
+                    </div>
+                    <ul class="achievements">
+                        <li>Configured cloud telephony services and set operational benchmarks (450 VN & 150 IVR per quarter)</li>
+                        <li>Recovered ₹75L in backlogged revenue and streamlined payment operations</li>
+                        <li>Acted as regulatory liaison with TRAI ensuring full compliance</li>
+                        <li>Created executive-level dashboards for performance monitoring</li>
                     </ul>
                 </div>
-                <div class="experience-description">
-                    <strong>Impact:</strong> Improved product visibility and performance in Auto Towing & Hauling categories. Helped optimize service delivery and returns.
-                </div>
-            </div>
-            
-            <div class="experience-item">
-                <h3 class="experience-title">Business Development Analyst</h3>
-                <div class="experience-company">MyTelly.in</div>
-                <div class="experience-period">Jan 2022 – Jan 2023 | Jaipur, Rajasthan</div>
-                <div class="experience-description">
-                    <ul class="experience-highlights">
-                        <li>Configured cloud telephony services (IVR, VN, DCP, SMS) and set operational benchmarks (450 VN & 150 IVR in a quarter).</li>
-                        <li>Recovered ₹75L in backlogged revenue and streamlined payment operations.</li>
-                        <li>Acted as a regulatory liaison with TRAI, ensuring full compliance and smooth service delivery.</li>
-                        <li>Created executive-level dashboards for performance monitoring and revenue tracking.</li>
-                    </ul>
-                </div>
-            </div>
-            
-            <div class="experience-item">
-                <h3 class="experience-title">Service Analyst</h3>
-                <div class="experience-company">Sykes Enterprises</div>
-                <div class="experience-period">Dec 2020 – Jul 2022 | Hyderabad, Telangana</div>
-                <div class="experience-description">
-                    <ul class="experience-highlights">
-                        <li>Developed a comprehensive knowledge base and live dashboards to enhance client service and internal operations.</li>
-                        <li>Played a key role in acquiring and launching a new Line of Business (LOB) by applying data-backed forecasting and analysis.</li>
-                        <li>Coordinated with service and leadership teams to improve delivery efficiency and performance outcomes.</li>
+
+                <div class="experience-item">
+                    <div class="experience-header">
+                        <div class="job-title">Service Analyst</div>
+                        <div class="company">Sykes Enterprises</div>
+                        <div class="duration">Dec 2020 - Jul 2022 | Hyderabad, Telangana</div>
+                    </div>
+                    <ul class="achievements">
+                        <li>Developed comprehensive knowledge base and live dashboards</li>
+                        <li>Acquired and launched new Line of Business using data-backed forecasting</li>
+                        <li>Coordinated with teams to improve delivery efficiency and performance outcomes</li>
                     </ul>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Projects Section -->
-    <section id="projects" class="projects">
+    <section id="case-studies" class="section">
         <div class="container">
-            <h2 class="section-title">Portfolio Projects / Case Studies</h2>
-            
-            <div class="project-item">
-                <div class="project-header">
-                    <div>
-                        <h3 class="project-title">App Install Campaign</h3>
-                        <div class="project-client">Client: Agatsya Edutech (EdTech Industry)</div>
+            <h2 class="section-title">Case Studies</h2>
+            <div class="case-studies-grid">
+                <div class="case-study">
+                    <div class="case-study-header">
+                        <div class="case-study-title">App Install Campaign</div>
+                        <div class="case-study-subtitle">Agatsya Edutech - EdTech Industry</div>
                     </div>
-                    <div class="project-meta">
-                        <div class="project-duration">Duration: April 2024</div>
-                        <div class="project-role">Role: Campaign Manager & Optimizer</div>
-                    </div>
-                </div>
-                
-                <div class="project-section">
-                    <h4>Strategy & Implementation</h4>
-                    <p><strong>Platform Used:</strong> Google Ads (App Campaign)</p>
-                    <p><strong>Budget:</strong> ₹600/day</p>
-                    
-                    <div class="project-tools">
-                        <span class="project-tool">Google Ads</span>
-                        <span class="project-tool">GA4 (Google Analytics 4)</span>
-                        <span class="project-tool">Canva</span>
-                        <span class="project-tool">Play Store Optimization</span>
-                    </div>
-                    
-                    <p><strong>Tactics:</strong></p>
-                    <ul class="experience-highlights">
-                        <li>Created and tested high-conversion creatives in Canva</li>
-                        <li>Optimized Play Store listing to improve conversion rate from impressions</li>
-                        <li>Used GA4 insights to refine targeting and engagement</li>
-                        <li>Targeted high-intent users across Android devices in India</li>
-                    </ul>
-                </div>
-                
-                <div class="project-metrics">
-                    <h4>Results</h4>
-                    <table class="metrics-table">
-                        <tr>
-                            <th>Metric</th>
-                            <th>Value</th>
-                        </tr>
-                        <tr>
-                            <td>Impressions</td>
-                            <td>302,756</td>
-                        </tr>
-                        <tr>
-                            <td>Clicks / Engagements</td>
-                            <td>14,962</td>
-                        </tr>
-                        <tr>
-                            <td>Click-Through Rate (CTR)</td>
-                            <td>4.94%</td>
-                        </tr>
-                        <tr>
-                            <td>Average CPC</td>
-                            <td>₹0.56</td>
-                        </tr>
-                        <tr>
-                            <td>Total Spend</td>
-                            <td>₹8,449.39</td>
-                        </tr>
-                        <tr>
-                            <td>App Downloads</td>
-                            <td>1,693</td>
-                        </tr>
-                        <tr>
-                            <td>Conversions (in-app)</td>
-                            <td>1,722</td>
-                        </tr>
-                        <tr>
-                            <td>Conversion Rate</td>
-                            <td>11.51%</td>
-                        </tr>
-                        <tr>
-                            <td>Cost per Download</td>
-                            <td>₹4.91</td>
-                        </tr>
-                    </table>
-                </div>
-                
-                <div class="project-highlights">
-                    <h4>Key Highlights</h4>
-                    <ul class="highlights-list">
-                        <li>Achieved 1,693 app installs at just ₹4.91 per download, significantly lower than the industry benchmark.</li>
-                        <li>Maintained a high CTR (4.94%), indicating strong creative and targeting effectiveness.</li>
-                        <li>Enhanced app store visibility through Play Store content optimization and creative iteration using Canva.</li>
-                        <li>Used GA4 insights to continuously refine and optimize campaign targeting.</li>
-                    </ul>
-                </div>
-            </div>
-            
-            <div class="project-item">
-                <div class="project-header">
-                    <div>
-                        <h3 class="project-title">Lead Generation via WhatsApp</h3>
-                        <div class="project-client">Client: TalkEng (EdTech / Training & Development)</div>
-                    </div>
-                    <div class="project-meta">
-                        <div class="project-duration">Duration: April 2024 – Ongoing</div>
-                        <div class="project-role">Role: Campaign Strategist & Execution Lead</div>
+                    <div class="case-study-content">
+                        <p><strong>Goal:</strong> Drive mobile app installs in India using Google Ads</p>
+                        <p><strong>Budget:</strong> ₹600/day</p>
+                        <div class="metrics-grid">
+                            <div class="metric">
+                                <span class="metric-value">1,693</span>
+                                <span class="metric-label">App Downloads</span>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-value">₹4.91</span>
+                                <span class="metric-label">Cost per Download</span>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-value">4.94%</span>
+                                <span class="metric-label">Click-Through Rate</span>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-value">11.51%</span>
+                                <span class="metric-label">Conversion Rate</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                
-                <div class="project-section">
-                    <h4>Strategy & Implementation</h4>
-                    <p><strong>Platform Used:</strong> Meta Ads (Facebook & Instagram)</p>
-                    <p><strong>Budget:</strong> ₹200/day</p>
-                    
-                    <div class="project-tools">
-                        <span class="project-tool">Meta Ads Manager</span>
-                        <span class="project-tool">Meta Pixel</span>
-                        <span class="project-tool">DoubleTick API</span>
-                        <span class="project-tool">Canva</span>
+
+                <div class="case-study">
+                    <div class="case-study-header">
+                        <div class="case-study-title">WhatsApp Lead Generation</div>
+                        <div class="case-study-subtitle">TalkEng - EdTech Training</div>
                     </div>
-                    
-                    <p><strong>Execution:</strong></p>
-                    <ul class="experience-highlights">
-                        <li>Launched a WhatsApp Click-to-Message campaign targeting potential leads</li>
-                        <li>Implemented a WhatsApp chatbot using DoubleTick to pre-qualify leads and collect contact details</li>
-                        <li>Designed engaging visuals with clear CTAs using Canva</li>
-                        <li>Optimized based on user interaction data through Pixel events and audience insights</li>
-                    </ul>
+                    <div class="case-study-content">
+                        <p><strong>Goal:</strong> Generate qualified leads via WhatsApp for counselor outreach</p>
+                        <p><strong>Budget:</strong> ₹200/day</p>
+                        <div class="metrics-grid">
+                            <div class="metric">
+                                <span class="metric-value">457</span>
+                                <span class="metric-label">Conversations Started</span>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-value">₹17.67</span>
+                                <span class="metric-label">Cost per Lead</span>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-value">65,719</span>
+                                <span class="metric-label">Total Reach</span>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-value">121,693</span>
+                                <span class="metric-label">Impressions</span>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                
-                <div class="project-metrics">
-                    <h4>Results (So Far)</h4>
-                    <table class="metrics-table">
-                        <tr>
-                            <th>Metric</th>
-                            <th>Value</th>
-                        </tr>
-                        <tr>
-                            <td>Reach</td>
-                            <td>65,719</td>
-                        </tr>
-                        <tr>
-                            <td>Impressions</td>
-                            <td>121,693</td>
-                        </tr>
-                        <tr>
-                            <td>Conversations Started</td>
-                            <td>457</td>
-                        </tr>
-                        <tr>
-                            <td>Cost per Lead (Conversation)</td>
-                            <td>₹17.67</td>
-                        </tr>
-                        <tr>
-                            <td>Amount Spent</td>
-                            <td>₹8,074.48</td>
-                        </tr>
-                        <tr>
-                            <td>Campaign Status</td>
-                            <td>Ongoing</td>
-                        </tr>
-                    </table>
-                </div>
-                
-                <div class="project-highlights">
-                    <h4>Key Highlights</h4>
-                    <ul class="highlights-list">
-                        <li>Successfully routed 457 high-intent users into WhatsApp conversations.</li>
-                        <li>Used DoubleTick API to automate first-level engagement and capture contact details.</li>
-                        <li>Achieved a cost per conversation of ₹17.67, ensuring scalable lead acquisition.</li>
-                        <li>Full ownership from strategy to execution, including creative design, pixel setup, and bot integration.</li>
-                    </ul>
+
+                <div class="case-study">
+                    <div class="case-study-header">
+                        <div class="case-study-title">FOMO WhatsApp Campaign</div>
+                        <div class="case-study-subtitle">English Olympiad & Internship Program</div>
+                    </div>
+                    <div class="case-study-content">
+                        <p><strong>Goal:</strong> Drive leads and sales for English Olympiad registrations</p>
+                        <p><strong>Strategy:</strong> FOMO-driven messaging with bot automation</p>
+                        <div class="metrics-grid">
+                            <div class="metric">
+                                <span class="metric-value">189</span>
+                                <span class="metric-label">Total Leads</span>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-value">100+</span>
+                                <span class="metric-label">Conversions</span>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-value">₹5L+</span>
+                                <span class="metric-label">Revenue Generated</span>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-value">53%</span>
+                                <span class="metric-label">Conversion Rate</span>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Footer / Contact -->
-    <footer id="contact">
+    <section id="contact" class="section" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white;">
         <div class="container">
-            <div class="footer-content">
-                <div class="footer-text">
-                    <h3>Let's Connect</h3>
-                    <p>Looking for a data-driven digital marketer who can help your business grow? I'd love to discuss how my experience in performance marketing and campaign optimization can benefit your team.</p>
-                    <div class="footer-contact">
-                        <a href="mailto:Sunilsingha900@gmail.com"><i class="fas fa-envelope"></i> Sunilsingha900@gmail.com</a>
-                        <a href="tel:7086857126"><i class="fas fa-phone"></i> 7086857126</a>
-                        <a href="https://www.linkedin.com/in/asunilsingha900" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
-                    </div>
+            <h2 class="section-title" style="color: white;">Let's Work Together</h2>
+            <div style="text-align: center; max-width: 600px; margin: 0 auto;">
+                <p style="font-size: 1.2rem; margin-bottom: 2rem;">Ready to drive growth with data-driven digital marketing strategies? Let's discuss how I can help scale your business.</p>
+                <div class="contact-info" style="justify-content: center; margin-bottom: 2rem;">
+                    <a href="mailto:Sunilsingha900@gmail.com" class="contact-item" style="color: white; font-size: 1.1rem;">
+                        <i class="fas fa-envelope"></i>
+                        <span>Sunilsingha900@gmail.com</span>
+                    </a>
+                    <a href="tel:7086857126" class="contact-item" style="color: white; font-size: 1.1rem;">
+                        <i class="fas fa-phone"></i>
+                        <span>7086857126</span>
+                    </a>
                 </div>
-                <div class="footer-cta">
-                    <p>Ready to boost your digital marketing ROI?</p>
-                    <a href="mailto:Sunilsingha900@gmail.com" class="hero-cta">
+                <a href="https://www.linkedin.com/in/asunilsingha900" target="_blank" class="cta-button">
+                    <i class="fab fa-linkedin"></i> Connect on LinkedIn
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Add scroll effect to header
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('header');
+            if (window.scrollY > 100) {
+                header.style.background = 'rgba(255, 255, 255, 0.98)';
+            } else {
+                header.style.background = 'rgba(255, 255, 255, 0.95)';
+            }
+        });
+
+        // Animate stats on scroll
+        function animateStats() {
+            const stats = document.querySelectorAll('.stat-number');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const target = entry.target;
+                        const finalValue = target.textContent;
+                        let currentValue = 0;
+                        const increment = finalValue.match(/\d+/)[0] / 50;
+                        
+                        const timer = setInterval(() => {
+                            if (currentValue < finalValue.match(/\d+/)[0]) {
+                                currentValue += increment;
+                                target.textContent = Math.floor(currentValue) + finalValue.replace(/\d+/, '');
+                            } else {
+                                target.textContent = finalValue;
+                                clearInterval(timer);
+                            }
+                        }, 50);
+                        
+                        observer.unobserve(target);
+                    }
+                });
+            });
+            
+            stats.forEach(stat => observer.observe(stat));
+        }
+
+        // Initialize animations
+        document.addEventListener('DOMContentLoaded', animateStats);
+    </script>
+</body>
+</html>
